@@ -1,7 +1,7 @@
 def reverse(s):
     return(s[::-1])
 
-def IsPalindrome(no):
+def IsPalindrome(no): 
     n= list(map(int, str(no)))
     
     rev= reverse(n)
