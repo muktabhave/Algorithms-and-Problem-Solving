@@ -10,18 +10,19 @@ class LinkedList:
 
     def ReverseLL(self):
         tmp= self.head
-        next= self.head
+        next=self.head.next
+        
         while(next!=None):
             prev=tmp
-            tmp=tmp.next
-            next=tmp.next.next
+            tmp=next
+            next=next.next
+            
             tmp.next=prev
             if(prev==self.head):
                 prev.next=None
-            if(next==None):
-                self.head=tmp
-            tmp.next=prev
-        
+            
+        self.head=tmp
+                
         return self
     
     def pushll(self,ele):
@@ -52,7 +53,7 @@ if (__name__=="__main__"):
     ll.pushll(10)
     ll.pushll(20)
     ll.pushll(30)
-    ll.printll()
+    ll.pushll(40)
     
     ll.ReverseLL()
     
