@@ -1,7 +1,7 @@
 def StrCheck(string):
     a=list(string)
     
-    stc=list()
+    stc=['a', 'b']
     
     i=0
     
@@ -12,27 +12,26 @@ def StrCheck(string):
         if ( a[i]== "{" or a[i]== "(" or a[i]== "[" ):
             
             # print ("in")
+                        
             stc.append(a[i])
-            
-            top+=1
         
         else:
             
-            if((a[i]=="}" and stc[top]== "{") or
-               (a[i]==")" and stc[top]== "(") or
-               (a[i]=="]" and stc[top]== "[") ):
+            if((a[i]=="}" and stc.pop()== "{") or
+               (a[i]==")" and stc.pop()== "(") or
+               (a[i]=="]" and stc.pop()== "[") ):
                 
-                top-=1
-            
+                if (len(stc)>0):
+                    stc.pop()
+                
             else:
                 return False
     
-    if(top==-1):
+    if(len(stc)==0):
         return True
     else:
         return False
     
 if (__name__=="__main__"):
-    print(StrCheck("{[]}"))
-    
+    print(StrCheck("{}[()]"))
     
