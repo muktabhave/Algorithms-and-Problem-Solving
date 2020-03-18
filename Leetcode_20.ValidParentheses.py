@@ -4,7 +4,6 @@ def StrCheck(string):
     stc=list()
     
     i=0
-    top=-1 
     
     for i in range (0, len(a)):
         
