@@ -1,7 +1,6 @@
 #Rotate array elements one by one
 def ArrayRotateElements(a,d):
     n=len(a)
-    print(n)
     for i in range (d):
 
         temp= a[0]
