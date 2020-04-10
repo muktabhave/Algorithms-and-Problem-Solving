@@ -1,4 +1,4 @@
-def BuySellStock(a):
+def BuySellStockMultiple(a):
     
     n=len(a)
     profit=0
