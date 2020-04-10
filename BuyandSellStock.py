@@ -1,4 +1,4 @@
-def BuyandSellStock(a):
+def BuyandSellStockOnce(a):
     
     minele=a[0]
     for i in range (1, len(a)):
