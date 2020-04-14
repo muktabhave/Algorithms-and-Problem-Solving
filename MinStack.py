@@ -1,25 +1,51 @@
-class MinStack:
+class Stack:
 
     def __init__(self):
-        top=-1
-        min=-1
+        self.top=-1
+        self.min=-1
+        self.items=[]
+        
+        
+    def push(self, x: int) -> None:
+        
+        self.items.append(x)
+        self.top+=1
+        if(self.top==0):
+            self.min=x
+        else:
+            if(x<self.min):
+                self.min=x
         
 
-    def push(self, x: int) -> None:
-        self.append(x)
-        top=top+1
-        min=getMin(self)
-
     def pop(self) -> None:
-        self.pop()
-        top=top-1
-        min=getMin(self)
+        if(self.min==self.items[self.top]):
+            self.min=self.items[0]
+            for j in range (1,self.top-1):
+                if (self.items[j]<self.min):
+                    self.min= self.items[j]
+            
+        
+        self.items.pop()
+        self.top-=1
+        
 
     def top(self) -> int:
-        return top
-
+        return self.top    
+    
     def getMin(self) -> int:
-        if(top==-1):
-            return "Stack is empty"
-        elif (top==0):
-            min=
+        return self.min
+            
+    
+if (__name__=="__main__"):
+    
+    s=Stack()
+    
+    s.push(10)
+    s.push(5)
+    s.push(20)
+    s.push(30)
+    s.pop()
+    s.pop()
+    s.pop()
+    print (s.items)
+    print(s.getMin())
