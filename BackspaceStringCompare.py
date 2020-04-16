@@ -2,32 +2,25 @@
 
 # Note that after backspacing an empty text, the text will continue empty.
 
-def BackspaceStringCompare(c1,c2):
-    c1=list(c1)
-    c2=list(c2)
-    stc1=[]
-    stc2=[]
+class Solution:
+    def ComputedStr(self,str1):
+        str1=list(str1)
+        stc=[]
+        i=0
+        while(i< len(str1)):
+            if(str1[i]=="#" and len(stc)>0):
+                stc.pop()
+            else:
+                str1[i]!="#" and stc.append(str1[i])
+            i+=1
+        return stc
     
-    i=0
-    while(i< len(c1)):
-        if(c1[i]=="#" and len(stc1)>0):
-            stc1.pop()
+    def backspaceCompare(self, str1: str, str2: str) -> bool:
+
+        stc1= self.ComputedStr(str1)
+        stc2= self.ComputedStr(str2)
+
+        if(stc1==stc2):
+            return True
         else:
-            stc1.append(c1[i])
-        i+=1
-    j=0
-    while(j<len(c2)):
-        if(c2[j]=="#" and len(stc2)>0):
-            stc2.pop()
-        else:
-            stc2.append(c2[j])
-        j+=1        
-    
-    if(stc1==stc2):
-        return True
-    else:
-        return False    
-    
-    
-if(__name__=="__main__"):
-    print(BackspaceStringCompare('ab#d','aec##d'))
+            return False    
