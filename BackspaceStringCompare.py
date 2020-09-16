@@ -11,7 +11,7 @@ class Solution:
             if(str1[i]=="#" and len(stc)>0):
                 stc.pop()
             else:
-                str1[i]!="#" and stc.append(str1[i])
+                stc.append(str1[i])
             i+=1
         return stc
     
