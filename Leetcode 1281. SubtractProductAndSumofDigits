@@ -14,3 +14,19 @@ class Solution:
         n=math.floor(n/10)
     
       return p-s
+
+#another approach- cover no to str and iterate, return aback to int and add or take product
+
+# suma=0
+# prod=1
+
+# str1=str(121)
+    
+# for i in str1:
+    
+#     suma=suma+int(i)
+    
+#     prod= prod*int(i)
+
+# print (prod, suma)
+    
