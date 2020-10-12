@@ -1,7 +1,7 @@
 def StrCheck(string):
     a=list(string)
     
-    stc=['a', 'b']
+    stc=[]
     
     i=0
     
