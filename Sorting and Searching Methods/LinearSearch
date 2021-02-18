@@ -1,0 +1,17 @@
+def LinearSearch(a, s):
+
+    for i in range (len(a)):
+
+        if (s==a[i]):
+            return i
+    
+    return -1
+
+
+def main():
+
+    print(LinearSearch([1,2,3,4,6], 6))
+
+if(__name__=="__main__"):
+
+    main()
